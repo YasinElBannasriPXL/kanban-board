@@ -4,6 +4,7 @@ import './KanbanColumn.css';
 export default function KanbanColumn() {
     const [todoDescription, setTodoDescription] = useState('');
     const [todos, setTodos] = useState([]);
+    // create get request
 
     let kanbanItems = todos.map(
         (todo) => 
@@ -15,10 +16,6 @@ export default function KanbanColumn() {
             </div>
         </div>
     );
-
-    function addTodo(todoDescription: any) {
-        setTodos([...todos, todoDescription]);
-    }
     
     return (
         <div id='kanban-column-wrapper'>
@@ -27,7 +24,6 @@ export default function KanbanColumn() {
                 <span>TODO (4)</span>
             </div>
             {kanbanItems}
-            <button onClick={addTodo}>add</button>
         </div>
     )
 }

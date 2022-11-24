@@ -1,0 +1,20 @@
+#sidebar-wrapper {
+    background: var(--secondary-color);
+    border-right: 1px solid #3c3c48;
+}
+#sidebar-create-button{
+    color: var(--purple-color);
+}
+#board-counter {
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+.board-item {
+    padding-left: 1rem;
+    margin-right: 2.2rem;
+}
+.board-item:hover {
+    background-color: var(--purple-color);
+    border-radius: 0 5rem 5rem 0;
+}
