@@ -5,25 +5,23 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
+  Outlet,
 } from "react-router-dom";
+import { Provider } from 'react-redux'
+import store from './store';
+import { useSelector, useDispatch } from 'react-redux'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <KanbanBoard />,
-  },
-  {
-    path: "/board/:boardId",
-    element: <KanbanBoard />,
-  }
-]);
+
+
 
 function App() {
   return (
-    <div className="App">
-      <SideBar />
-      <RouterProvider router={router} />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <SideBar />
+        <Outlet />
+      </div>
+    </Provider>
   )
 }
 

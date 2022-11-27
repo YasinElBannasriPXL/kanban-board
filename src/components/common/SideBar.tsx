@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import Board from "../../models/Board";
 import "./SideBar.css";
+import { addBoard, removeBoard, boardsState} from "../../features/boardsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function SideBar() {
-  const [boards, setBoards] = useState([] as Board[]);
+  const dispatch = useDispatch()
+  const boards = useSelector(boardsState);
 
-  let boardDivList = boards.map(board => <div className="board-item">{board.name}</div>);
+  let boardDivList = boards.map(board => <Link to={`board/${board.id}`}>
+    <div className="board-item" key={board.id}>{board.name}</div>
+  </Link>);
 
   useEffect(() => {
     //TODO: BACKEND CALL TO GET KANBAN BOARDS
@@ -22,13 +28,13 @@ export default function SideBar() {
         </span>
         {boardDivList}
       </div>
-      <div id="sidebar-create-button" className="cursor-pointer" onClick={addBoard}>
-        <span>+ Create New Board</span>
-      </div>
+      <div id="sidebar-create-button" className="cursor-pointer" onClick={() => dispatch(addBoard(new Board('New Board')))}>
+      <span>+ Create New Board</span>
     </div>
+    </div >
   );
 
-  function addBoard() {
-    setBoards([...boards, new Board("New Board")]);
-  }
+  // function addBoard() {
+  //   setBoards([...boards, new Board("New Board")]);
+  // }
 }
