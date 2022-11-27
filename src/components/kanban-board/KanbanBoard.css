@@ -1,0 +1,4 @@
+#kanban-board-upper {
+    background-color: var(--primary-color);
+    border-bottom: 1px solid #3c3c48;
+}   

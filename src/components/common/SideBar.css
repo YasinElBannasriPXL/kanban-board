@@ -12,7 +12,9 @@
 }
 .board-item {
     padding-left: 1rem;
-    margin-right: 2.2rem;
+    margin-right: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
 }
 .board-item:hover {
     background-color: var(--purple-color);

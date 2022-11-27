@@ -18,7 +18,7 @@ export default function SideBar() {
   }, [])
 
   return (
-    <div id="sidebar-wrapper" className="gap-5 flex flex-col w-1/4 min-h-screen">
+    <div id="sidebar-wrapper" className="gap-5 flex flex-col w-1/5 min-h-screen">
       <div>
         <h1 className="text-5xl">kanban</h1>
       </div>
